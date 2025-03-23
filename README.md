@@ -35,6 +35,9 @@ m2kr/
 ```
 
 ---
+## Hardware Used
+
+Multiple A100 or L40S NVIDIA GPUs with around 48 GB GPU RAM
 
 ## 📥 Dataset Setup (Before Running)
 
