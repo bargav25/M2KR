@@ -1,0 +1,13 @@
+# Core
+numpy
+pandas
+tqdm
+requests
+beautifulsoup4
+python-dotenv
+Pillow
+lxml  
+transformers
+torch
+faiss-cpu 
+colpali-engine  
