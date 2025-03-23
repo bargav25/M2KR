@@ -1,12 +1,12 @@
 # 🧠 M2KR: Multimodal Retrieval with Wikipedia + FAISS
 
-This project implements an end-to-end image retrieval pipeline using Wikipedia screenshots as queries and image scraping for passage/document indexing. It uses embeddings from ColQwen, FAISS for similarity search, and automated scraping from Wikipedia articles.
+This project implements an end-to-end **visual retrieval pipeline** that takes **query images** and retrieves the most relevant **Wikipedia articles** by matching them against images scraped or extracted from Wikipedia pages. It uses embeddings from ColQwen2, FAISS for efficient similarity search, and supports both image scraping from live Wikipedia pages and image extraction from screenshots.
 
 ---
 
 ## 🚀 Features
 
-- 🔍 Scrape images from Wikipedia articles based on query filenames
+- 🔍 Scrape images from Wikipedia articles based on query filenames (Alternatively you can choose to extract images from the Wikipedia screenshots using traditional OpenCV techniques: check `extract_images.py`)
 - 🖼️ Generate dense embeddings using a transformer-based vision model (`ColQwen2`)
 - ⚡ Index passage images using FAISS (`IndexFlatL2`)
 - 🎯 Retrieve top-k most relevant images per query
@@ -36,7 +36,6 @@ m2kr/
 
 ---
 
-
 ## 🔧 Usage
 
 Run the entire pipeline:
@@ -46,7 +45,6 @@ python -m venv venv
 source venv/bin/activate    
 bash run.sh
 ```
-
 
 This will:
 1. Install requirements
@@ -62,7 +60,6 @@ This will:
 - Python 3.10
 
 ---
-
 
 ## 📄 License
 
@@ -80,7 +77,6 @@ Pull requests are welcome. If you find a bug or want to improve something, feel 
 
 **Bargav Jagatha**  
 [github.com/bargav25](https://github.com/bargav25)
-
 
 **Abhishek Varshney**  
 [github.com/avarshn](https://github.com/avarshn)

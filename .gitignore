@@ -1,5 +1,43 @@
-# Ignore virtual environment
+# Python virtual environment
 venv/
 
-# Ignore all files and folders inside data/
+# Data folders
 data/
+cache/
+__pycache__/
+*.py[cod]
+*.so
+
+# Datasets and model cache (Hugging Face, torch, etc.)
+~/.cache/
+.cache/
+.huggingface/
+datasets/
+hf_cache/
+torch_cache/
+
+# Jupyter/IPython stuff
+.ipynb_checkpoints/
+*.ipynb
+
+# Logs and outputs
+*.log
+*.out
+*.tmp
+*.bak
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Environment/config
+.env
+.envrc
+*.yaml~
+*.json~
+
+# IDE/editor files
+.vscode/
+.idea/
+*.swp
+*.swo
