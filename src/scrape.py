@@ -5,13 +5,8 @@ import requests
 from bs4 import BeautifulSoup
 from tqdm import tqdm
 from config import PASSAGE_IMAGE_FOLDER, PASSAGE_SCRAPED_FOLDER
-from urllib.parse import quote
 from PIL import UnidentifiedImageError, Image
-# from pathlib import Path
-
-
-# VALID_EXTENSIONS = {'.jpg', '.jpeg', '.png', '.webp', '.bmp', '.gif'}
-
+from urllib.parse import unquote, quote
 
 
 def download_image(url, folder_name, idx):
@@ -42,8 +37,11 @@ def download_image(url, folder_name, idx):
 def get_wikipedia_url(img_filename):
     """Convert an image filename to a Wikipedia article URL."""
     base_name = os.path.splitext(img_filename)[0]
-    page_title = quote(base_name.replace(" ", "_"))
+    decoded_name = unquote(base_name)  # 🔥 fix is here
+    page_title = quote(decoded_name.replace(" ", "_"))  # re-encode properly
     return f"https://en.wikipedia.org/wiki/{page_title}"
+    # page_title = quote(base_name.replace(" ", "_"))
+    # return f"https://en.wikipedia.org/wiki/{page_title}"
 
 
 def scrape_wikipedia_images(page_url):
@@ -76,7 +74,7 @@ def scrape_wikipedia_images(page_url):
 def main():
     print("Loading image filenames from:", PASSAGE_IMAGE_FOLDER)
     image_names = os.listdir(PASSAGE_IMAGE_FOLDER)
-    # image_names = [os.path.splitext(img)[0] for img in all_images]
+
 
     for img_filename in tqdm(image_names, desc="Scraping Wikipedia"):
         wiki_url = get_wikipedia_url(img_filename)

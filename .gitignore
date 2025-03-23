@@ -1,0 +1,5 @@
+# Ignore virtual environment
+venv/
+
+# Ignore all files and folders inside data/
+data/
