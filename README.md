@@ -36,6 +36,16 @@ m2kr/
 
 ---
 
+## 📥 Dataset Setup (Before Running)
+
+The folders `data/passage_images/` and `data/query_images/` initially contain only a few sample images.
+
+To run the full pipeline, download the official dataset from Hugging Face:
+
+📦 [M2KR-Challenge Dataset on Hugging Face](https://huggingface.co/datasets/Jingbiao/M2KR-Challenge/tree/main)
+
+Once downloaded and placed correctly, you can proceed to run:
+
 ## 🔧 Usage
 
 Run the entire pipeline:
